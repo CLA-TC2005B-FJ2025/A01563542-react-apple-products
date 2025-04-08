@@ -7,6 +7,7 @@ import imac from './svg/imac.svg'
 import macbook from './svg/macbook.svg'
 import airpods from './svg/airpods.svg'
 import heart from './svg/heart.svg'
+import './AppleProduct.css'
 
 const mapaSVG = {iphone, ipad, watch, imac, macbook, airpods};
 
@@ -19,10 +20,14 @@ export function AppleProduct( props ) {
   }
 
   return (
-    <div onClick={manejarClicks}>
-      Producto {props.type} lleva {clicks} clicks
-      <img alt="producto" src={mapaSVG[props.type]} width={200} />
-      <img alt="heart" src={heart} style={{width: 10+10*clicks+'px'}}/>
+    <div className = 'apple product' onClick={manejarClicks}>
+      
+      <img className='product' 
+        alt="producto" src={mapaSVG[props.type]} 
+        width={200}/>
+      <img classname='heart'
+        alt="heart" src={heart} 
+        style={{width: 10+10*clicks+'px'}}/>
     </div>
   )
 }
